@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>Tasky_Website</title>
+
+</head>
+
+<body>
+    <div id="desktop" class="w-screen h-screen">
+
+        <!-- header -->
+        <header class="w-full h-[36px] flex md:px-[150px]">
+            <nav id="navbar" class="w-full flex justify-between items-center">
+                <div>
+                    <h1 class="font-bold text-[24px] text-blue-900 underline">Organise</h1>
+                </div>
+
+                <div class="flex flex-col ">
+
+                    <!-- Hamburger icon -->
+                    <button data-collapse-toggle="navbar-hamburger" type="button"
+                        class="lg:hidden inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 "
+                        aria-controls="navbar-hamburger" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                      
+                    <!-- nav items -->
+                    <div class="hidden lg:flex lg:items-center w-full lg:w-auto" id="navbar-hamburger">
+                        <ul
+                            class="flex flex-col lg:flex-row lg:items-center font-medium mt-4 lg:mt-0 rounded-lg lg:bg-white">
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-3 lg:text-blue-500 lg:bg-white rounded-sm hover:bg-gray-100 aria-current">Home</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-3 text-gray-700 rounded-sm hover:bg-gray-100">Services</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-3 text-gray-700 rounded-sm hover:bg-gray-100 ">Pricing</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-3 text-gray-700 rounded-sm hover:bg-gray-100  ">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const toggleButton = document.querySelector('[data-collapse-toggle="navbar-hamburger"]');
+                const navbarHamburger = document.getElementById('navbar-hamburger');
+
+                toggleButton.addEventListener('click', function () {
+                    navbarHamburger.classList.toggle('hidden');
+                });
+            });
+        </script>
+        <script src="script.js"></script>
+</body>
+
+</html>
