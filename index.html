@@ -59,14 +59,101 @@
                     </div>
                 </div>
 
-                <button class="btn flex items-center border-[2px] border-blue-900 px-3 py-2  rounded-lg">
+                <!-- Modal toggle -->
+                <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
+                    class="btn flex items-center border-[2px] border-blue-900 px-3 py-2  rounded-lg hover:bg-gray-200"
+                    type="button">
                     <svg class="size-[16px] mr-1" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                        <path
-                            d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" />
-                    </svg>
+                    viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                    <path
+                        d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" />
+                </svg>
                     <h2 class=" font-semibold">Add New</h2>
                 </button>
+
+                <!-- Main modal -->
+                <div id="authentication-modal" tabindex="-1" aria-hidden="true"
+                    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                    <div class="relative p-4 w-full max-w-md max-h-full">
+                        <!-- Modal content -->
+                        <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-500">
+                            <!-- Modal header -->
+                            <div
+                                class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                    Add new tasks here 
+                                </h3>
+                                <button type="button"
+                                    class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                    data-modal-hide="authentication-modal">
+                                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 14 14">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                    </svg>
+                                    <span class="sr-only">Close modal</span>
+                                </button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="p-4 md:p-5">
+                                <form class="space-y-4" action="#">
+                                    <!-- image  -->
+                                    <div>
+                                        <label for="image"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Add image
+                                        </label>
+                                        <input type="text" name="image" id="image"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                                            placeholder="Add image URL" required />
+                                    </div>
+
+                                    <!-- title -->
+                                    <div>
+                                        <label for="Title"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Task title 
+                                        </label>
+                                        <input type="text" name="title" id="title" placeholder="Add title"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                                            required />
+                                    </div>
+                                    <!-- task type -->
+                                    <div>
+                                        <label for="type"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Task title 
+                                        </label>
+                                        <input type="text" name="type" id="type" placeholder="Add task type"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                            required />
+                                    </div>
+                                    <!-- description -->
+                                    <div>
+                                        <label for="description"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Task title 
+                                        </label>
+                                        <input type="text" name="description" id="description" placeholder="Task description"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                            required />
+                                    </div>
+
+                                    <!-- buttons -->
+                                     <div class="flex gap-2">
+                                        <button type="submit"
+                                        class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Save changes
+                                        </button>
+                                   
+                                     <div>
+                                        <button type="close"
+                                        class="w-full text-white bg-gray-700 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
+                                        Close
+                                    </button>
+                                   
+                                     </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </nav>
         </header>
 
@@ -97,7 +184,7 @@
                         <div>
                             <div class="card">
                                 <div
-                                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm ">
                                     <a href="#">
                                         <img class="rounded-t-lg"
                                             src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" />
@@ -105,18 +192,18 @@
                                     <div class="p-5">
                                         <a href="#">
                                             <h5
-                                                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                                Noteworthy technology acquisitions 2021
+                                                class="mb-2 text-2xl font-bold tracking-tight text-blue-900 ">
+                                                Task Heading
                                             </h5>
                                         </a>
-                                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                            Here are the biggest enterprise technology acquisitions of 2021 so far, in
-                                            reverse chronological order.
+                                        <p class="mb-3 font-normal text-gray-700 ">
+                                            Task Details
+                                            .
                                         </p>
                                         <div class="flex items-center justify-between">
                                             <a href="#"
                                                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-md hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                                Read more
+                                                Open task
                                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
                                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                                     <path stroke="currentColor" stroke-linecap="round"
@@ -126,7 +213,7 @@
                                             </a>
                                             <div class="flex gap-1">
                                                 <div style="padding: 8px;"
-                                                    class="border-2 border-gray-900 rounded-md hover:bg-gray-600">
+                                                    class="border-2 border-gray-900 rounded-md hover:bg-gray-300">
                                                     <div class="w-4">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
                                                             width="100%" height="100%" style="box-sizing:border-box;">
@@ -156,7 +243,7 @@
                         <div>
                             <div class="card">
                                 <div
-                                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm ">
                                     <a href="#">
                                         <img class="rounded-t-lg"
                                             src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" />
@@ -164,18 +251,18 @@
                                     <div class="p-5">
                                         <a href="#">
                                             <h5
-                                                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                                Noteworthy technology acquisitions 2021
+                                                class="mb-2 text-2xl font-bold tracking-tight text-blue-900 ">
+                                                Task Heading
                                             </h5>
                                         </a>
-                                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                            Here are the biggest enterprise technology acquisitions of 2021 so far, in
-                                            reverse chronological order.
+                                        <p class="mb-3 font-normal text-gray-700 ">
+                                            Task Details
+                                            .
                                         </p>
                                         <div class="flex items-center justify-between">
                                             <a href="#"
                                                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-md hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                                Read more
+                                                Open task
                                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
                                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                                     <path stroke="currentColor" stroke-linecap="round"
@@ -185,7 +272,7 @@
                                             </a>
                                             <div class="flex gap-1">
                                                 <div style="padding: 8px;"
-                                                    class="border-2 border-gray-900 rounded-md hover:bg-gray-600">
+                                                    class="border-2 border-gray-900 rounded-md hover:bg-gray-300">
                                                     <div class="w-4">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
                                                             width="100%" height="100%" style="box-sizing:border-box;">
@@ -215,7 +302,7 @@
                         <div>
                             <div class="card">
                                 <div
-                                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm ">
                                     <a href="#">
                                         <img class="rounded-t-lg"
                                             src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" />
@@ -223,18 +310,18 @@
                                     <div class="p-5">
                                         <a href="#">
                                             <h5
-                                                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                                Noteworthy technology acquisitions 2021
+                                                class="mb-2 text-2xl font-bold tracking-tight text-blue-900 ">
+                                                Task Heading
                                             </h5>
                                         </a>
-                                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                            Here are the biggest enterprise technology acquisitions of 2021 so far, in
-                                            reverse chronological order.
+                                        <p class="mb-3 font-normal text-gray-700 ">
+                                            Task Details
+                                            .
                                         </p>
                                         <div class="flex items-center justify-between">
                                             <a href="#"
                                                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-md hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                                Read more
+                                                Open task
                                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
                                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                                     <path stroke="currentColor" stroke-linecap="round"
@@ -244,7 +331,7 @@
                                             </a>
                                             <div class="flex gap-1">
                                                 <div style="padding: 8px;"
-                                                    class="border-2 border-gray-900 rounded-md hover:bg-gray-600">
+                                                    class="border-2 border-gray-900 rounded-md hover:bg-gray-300">
                                                     <div class="w-4">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
                                                             width="100%" height="100%" style="box-sizing:border-box;">
@@ -269,6 +356,9 @@
                                 </div>
                             </div>
                         </div>
+
+                       
+                      
 
                     </div>
                 </div>
