@@ -29,8 +29,8 @@ const addNewCard = () => {
     //pushing the generated data into the local storage 
     globalTaskData.push(taskData);
 
-    //updating the local storage
-    localStorage.setItem("organiseCA", JSON.parse({cards: globalTaskData}))
+    //updating the local storage (to convert a J.S. object into a JSON string we use "stringyfy")
+    localStorage.setItem("organiseCA", JSON.stringify({cards: globalTaskData}))
 
     //generate HTML Code
     const newCard =
@@ -117,7 +117,14 @@ const addNewCard = () => {
 const loadExistingCards = () => {
 
     //check local storage
-    //retrive data if exists
+    const getData = localStorage.getItem("organiseCA")
+
+    //parse JSON data, if exists
+    if (!getData) return;
+
+    const taskCards = JSON.parse(getData); //parse will convert JSON object to javascript
+
+     globalTaskData = taskCards.card; //updating globalTaskData
     //genertae HTML code for those data
     //inject to DOM
 };
