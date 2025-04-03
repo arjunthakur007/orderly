@@ -30,7 +30,7 @@ const addNewCard = () => {
     globalTaskData.push(taskData);
 
     //updating the local storage
-    localStorage.setItem("organiseCA", taskData)
+    localStorage.setItem("organiseCA", JSON.parse({cards: globalTaskData}))
 
     //generate HTML Code
     const newCard =
