@@ -1,5 +1,5 @@
-const taskContainer = document.querySelector('.task_Container')
-
+const taskContainer = document.querySelector('.task_Container');
+let globalTaskData = [];
 
 // >>add new button open close
 CTA.addEventListener('click', () => {
@@ -25,6 +25,12 @@ const addNewCard = () => {
         description: document.getElementById("description").value,
     };
     console.log(taskData);
+
+    //pushing the generated data into the local storage 
+    globalTaskData.push(taskData);
+
+    //updating the local storage
+    localStorage.setItem("organiseCA", taskData)
 
     //generate HTML Code
     const newCard =
@@ -103,5 +109,16 @@ const addNewCard = () => {
 
     return;
 
+};
+
+
+//page will not refresh while reloading
+
+const loadExistingCards = () => {
+
+    //check local storage
+    //retrive data if exists
+    //genertae HTML code for those data
+    //inject to DOM
 };
 
